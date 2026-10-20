@@ -14,6 +14,13 @@ def calculate_total(minutes_list):
 print("North DC total downtime:", calculate_total(north_dc))
 print("South DC total downtime:", calculate_total(south_dc))
 
+def longest_incident(minutes_list):
+    longest = 0
+    for m in minutes_list:
+        if m > longest:
+            longest = m
+    return longset
+print("Longest North DC incident:", longest_incident(north_dc))
 
 print("Most recent North DC incident:", north_dc[-1])
 
