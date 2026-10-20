@@ -17,6 +17,12 @@ print("South DC total downtime:", calculate_total(south_dc))
 
 print("Most recent North DC incident:", north_dc[-1])
 
-new_minutes = int(input("Log a new North DC incident (minutes): "))
-north_dc.append(new_minutes)
-print("New North DC total:", sum(north_dc))
+raw = input("Log a new North DC incident (minutes): ")
+try:
+    new_minutes = int(raw)
+except ValueError:
+    print("Please enter a whole number, like 30.")
+else:
+    north_dc.append(new_minutes)
+    print("New North DC total:", sum(north_dc))
+
