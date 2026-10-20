@@ -5,17 +5,17 @@
 north_dc = [45, 30, 120, 15]   # downtime minutes per incident
 south_dc = [60, 10, 25]
 
-total = 0
-for m in north_dc:
-    total = total + m
-print("North DC total downtime:", total)
+def calculate_total(minutes_list):
+    total = 0
+    for m in minutes_list:
+        total = total + m
+    return total
 
-total = 0
-for m in south_dc:
-    total = total + m
-print("South DC total downtime:", total)
+print("North DC total downtime:", calculate_total(north_dc))
+print("South DC total downtime:", calculate_total(south_dc))
 
-print("Most recent North DC incident:", north_dc[4])
+
+print("Most recent North DC incident:", north_dc[-1])
 
 new_minutes = int(input("Log a new North DC incident (minutes): "))
 north_dc.append(new_minutes)
